@@ -31,7 +31,7 @@ function PmTest(){
             <div className="pm-de"></div>
             </div>
             <div className="pmmainbox">
-                <h1 className="pmmainbox-font"><Link to="/pm/member-annual">개인 연차 조회</Link></h1>
+                <h1 className="pmmainbox-font"><Link to="/pm/member-annual">개인연차조회</Link></h1>
             <div className="pm-de"></div>
             </div>
             <div className="pmmainbox">

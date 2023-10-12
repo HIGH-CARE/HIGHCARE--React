@@ -93,7 +93,7 @@ font-size: 16px;
     display: flex;
     margin: 80px 0px 0px 180px;
     width: 900px;
-    height: 1280px;
+    height: 1100px;
     border: 1px solid black;
 }
 
@@ -454,12 +454,16 @@ color:#0267ff;
 }
 .pmmainbox:hover{
 
-    background-color:  rgb(199, 199, 199);
+    background-color:  #467ca11f;
+    transform: scale(1.2);
+    transition : all ease 0.5s;
 
 }
 
 .pmmainbox-first:hover{
-    background-color:  rgb(199, 199, 199);
+    background-color:  #467ca11f;
+    transform: scale(1.2);
+    transition : all ease 0.5s;
 }
 
 .pm-work-button:hover{
@@ -576,7 +580,7 @@ font-size: 16px;
     background-color: #10479A;
     color: white;
     text-align: center;
-    margin-left: 1200px;
+    margin-left: 1400px;
 }
 .pm-de-adds{
     width: 150px;
@@ -1446,7 +1450,18 @@ display: flex;
     border-bottom: 1px solid black;
     border-right: 1px solid black;
 }
-
+.pm-titleboxsm{
+    display: flex;
+    width: 44px;
+    height: 183px;
+    writing-mode: vertical-lr;
+    align-items: center;
+    justify-content: center;
+    background-color: #d9d4d4;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
 .pm-titleboxss{
     display: flex;
     width: 72px;
@@ -1575,19 +1590,21 @@ display: flex;
 }
 
 .pmmainbox{
-    margin: 70px 40px 30px 0px;
-    width: 420px;
+    margin: 70px 100px 30px 50px;
+    width: 300px;
     height: 300px;
+    border-radius: 60%;
     background-color: white;
-    border: 3px solid #10479A;
+    border: 3px solid #5a82be;
     /* border-radius: 6px; */
 }
 .pmmainbox-first{
-    margin: 70px 40px 30px 130px;
-    width: 400px;
+    margin: 70px 100px 30px 180px;
+    width: 300px;
     height: 300px;
+    border-radius: 60%;
     background-color: white;
-    border: 3px solid #10479A;
+    border: 3px solid #5a82be;
     /* border-radius: 6px; */
 }
 
@@ -1621,9 +1638,10 @@ display: flex;
 .pmmainbox-font{
 margin-top: 55px;
     text-align: center;
-    color: #092857;
+    color: #000000;
     padding: 70px;
-    font-size: 30px;
+    font-size: 26px;
+    font-style: bold;
 font-family: NanumGothic !important;
 }
 
@@ -1633,6 +1651,7 @@ font-family: NanumGothic !important;
 
 .pmdisplay{
     display: flex;
+    align-items: left;
 }
 
 .pmmainfont{
@@ -1645,6 +1664,158 @@ font-family: NanumGothic !important;
 
 .divpmbox{
     width: 1600px;
-    height: 850px;
-    background-color: #dbdbdb;
+    height: 870px;
+    /* background-color: #467ca11f; */
+}
+
+.pmSelectBox{
+    width: 160px;
+    height: 40px;
+}
+
+.newinput{
+    width: 400px;
+    height: 30px;
+    border: 2px solid #a6c7f8;
+    border-radius: 4px;
+}
+
+.resistdiv{
+    width: 1500px;
+    height: 1200px;
+    border-top: 1px solid #7B7B7B;
+    border-bottom: 1px solid #7B7B7B;
+}
+
+.resistflex{
+    flex-direction:column;
+}
+
+.topmargin{
+    margin-top: 10px;
+}
+
+.labelMargin{
+    margin-right: 10px;
+}
+
+.pmborderline {
+    border-top: 1px solid #444444;
+    margin: 30px auto;
+    width: 600px;        
+}
+.weiterdiv{
+    height: 37px;
+}
+.weiterdiv2{
+    height: 47px;
+}
+
+.pmSelectBox2{
+    width: 200px;
+    height: 36px;
+}
+.pm-inputs2{
+    border: 2px solid black;
+    /* outline: none; */
+    background-color: #773838;
+}
+
+.weiterdiv3{
+    height: 55px;
+}
+
+.carrerInput{
+    width: 200px;
+    height: 30px;
+    border: 2px solid #a6c7f8;
+    border-radius: 4px;
+}
+
+
+
+/* .weiterLine{
+    width: 10px;
+    border-bottom: 1px solid black;
+} */
+
+.carrerdiv{
+    display: flex;
+}
+
+.carrerdivback{
+    width: 1300px;
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: 1px solid #ececec;
+    box-shadow: 2px 1px 3px;
+    padding: 2px;
+}
+
+.carrermargin{
+    display: flex;
+    margin-left: 100px;
+    height: auto;
+}
+
+.carrerLabelMargin{
+    margin: 0px 150px 0px 10px;
+}
+.carrerLabelMargin2{
+    margin: 0px 170px 0px 10px;
+}
+.carrerLabelMargin3{
+    margin: 0px 120px 0px 10px;
+}
+
+/* .registLeftMargin{
+    margin-left: ;
+} */
+
+.resistflexTwo{
+    flex-direction:column;
+    align-items: baseline !important;
+    background-color: #f6f4f4;
+}
+
+
+.resisdtDivBack{
+    width: 1308px;
+    height: 435px;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 2px 1px 3px;
+    margin-left: 100px;
+}
+
+.pminfo{
+    width: 20px;
+    height: 50px;
+}
+
+.resistTotalBack{
+    width: 1500px;
+    height: 1400px;
+    background-color: #f7f7f7;
+    flex-direction: column;
+}
+
+
+.pmdisplay2{
+    display: flex;
+    align-items: left;
+    margin: 10px 0px 0px 10px;
+}
+
+.insertweiter{
+    margin: 20px 0px 20px 10px;
+}
+
+
+.insertButton{
+    width: 100px;
+    height: 40px;
+    margin: 20px 0px 0px 1300px;
 }

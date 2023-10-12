@@ -3,6 +3,8 @@ import './pm-member.css'
 import PmNav from './pmNav';
 import { useDispatch, useSelector } from 'react-redux';
 import { callEmployeeAPI } from '../../apis/PmAPICalls';
+import { Link } from 'react-router-dom';
+
 
 function PmMenu() {
 
@@ -33,10 +35,11 @@ function PmMenu() {
     },
     [currentPage]);
 
-    // const handleMenuItemClick = (currentPage) => {
-    //     dispatch(callEmployeeAPI({ currentPage}));
-    //     setSelectedStatus(currentPage);
-    // }
+    // const history = useHistory();
+    // const handleEmployeeClick = (empNo) => {
+    //     // 선택된 사원의 정보를 URL 파라미터로 전달하면서 PmMemberResist로 이동
+    //     history.push(`/pm-resist/${empNo}`);
+    //   }
 
 
 	return (
@@ -66,8 +69,12 @@ function PmMenu() {
                     </tr>
                     {Array.isArray(results.data) && results.data
                         .map((result) => (
-                            <tr key={result.empNo}>
-                                <td>{result.empName}</td>
+                            // <tr key={result.empNo} onClick={() => handleEmployeeClick(result.empNo)}>
+                            <tr key={result.empNo} >
+                                <td> <Link to={`/pm/pm-resist/${result.empNo}`}>
+                                    {result.empName}
+                                    </Link>
+                                </td>
                                 <td>{result.job.name}</td>
                                 <td>{result.phone}</td>
                                 <td>{result.dt.name}</td>
@@ -85,7 +92,7 @@ function PmMenu() {
                 </div>
 
             {/* 페이징 처리를 위한 버튼  */}
-            <div style={{ listStyleType: "none", display: "flex", justifyContent: "center", marginLeft: "780px" }}>
+            <div style={{ listStyleType: "none", display: "flex", justifyContent: "center" }}>
             { Array.isArray(results) &&
             <button 
                 onClick={() => setCurrentPage(currentPage - 1)} 
