@@ -156,7 +156,6 @@ function PmWork() {
             <div className="pm-div-font">출퇴근 관리
             </div>
         </div>
-z
                     <div className="pm-workbox">
                         <div className="pm-workin-box">
                             <input onClick={pmSubmission} type="button" value="출근" className="pm-work-button2"></input>

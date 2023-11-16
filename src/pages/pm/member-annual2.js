@@ -26,32 +26,31 @@ function PmMemberAnnual() {
         <div className="pm-de-top">
             <div className="pm-div-font">개인 연차 조회</div>
         </div>
-                <div className="pmMaTop">
+                <div className="pm-ma-top">
                 <div className='div3'></div>
-                    <div className="pmMaplus">
-                    <div className="pmLine"></div>
-                <div className="pmMaBox2">
-                    <div className="pmMaFont">총연차</div>
-                    <div className="pmMaNumber">{pmresult[0]?.totalAnnual && pmresult[0]?.totalAnnual}</div>
+                    <div className="pm-ma-plus">
+                <div className="pm-ma-box2">
+                    <div className="pm-ma-font">총연차</div>
+                    <div className="pm-ma-number">{pmresult[0]?.totalAnnual && pmresult[0]?.totalAnnual}</div>
                 </div>
-                <div className='pmMaWeiter'></div>
-                <div className="pmMaBox">
-                    <div className="pmMaFont">발생 연차</div>
+                <div className="pm-line"></div>
+                <div className="pm-ma-box">
+                    <div>발생 연차</div>
                     {pmresult[0]?.basicAnnual > 1 && (
-                        <div className="pmMaNumber">{pmresult[0]?.basicAnnual}</div>
+                        <div className="pm-ma-number">{pmresult[0]?.basicAnnual}</div>
                     )}
                     {pmresult[0]?.basicAnnual <= 1 && (
-                        <div className="pmMaNumber">00</div>
+                        <div className="pm-ma-number">00</div>
                     )}
                 </div>
-                <div className="pmMaWeiter"></div>
-                <div className="pmMaBox">
-                    <div className="pmMaFont">발생 월차</div>
+                <div className="pm-line"></div>
+                <div className="pm-ma-box">
+                    <div>발생 월차</div>
                     {pmresult[0]?.basicAnnual < 2 && (
-                        <div className="pmMaNumber">{pmresult[0]?.basicAnnual}</div>
+                        <div className="pm-ma-number">{pmresult[0]?.basicAnnual}</div>
                     )}
                     {pmresult[0]?.basicAnnual >= 1 && (
-                        <div className="pmMaNumber"></div>
+                        <div className="pm-ma-number"></div>
                     )}
                 </div>
                 {/* <div className="pm-line"></div>
@@ -64,20 +63,19 @@ function PmMemberAnnual() {
                     <div>이월 연차</div>
                     <div className="pm-ma-number">00</div>
                 </div> */}
-                <div className="pmMaWeiter"></div>
-                <div className="pmMaBox">
-                    <div className="pmMaFont">사용 연차</div>
-                    <div className="pmMaNumber">00</div>
+                <div className="pm-line"></div>
+                <div className="pm-ma-box">
+                    <div>사용 연차</div>
+                    <div className="pm-ma-number">00</div>
                 </div>
-                <div className="pmMaWeiter"></div>
-                <div className="pmMaBox">
-                    <div className="pmMaFont">잔여 연차</div>
-                    <div className="pmMaNumber">00</div>
+                <div className="pm-line"></div>
+                <div className="pm-ma-box">
+                    <div>잔여 연차</div>
+                    <div className="pm-ma-number">00</div>
                 </div>
                 </div>
                 </div>
-                <div className='pmMaWeiter'>
-                    <table className="pm-ma-pm">
+                    <table className="pm-ma-table">
                         <tbody>
                     <tr>
                         <th className="columnpm1">이름</th>
@@ -103,7 +101,6 @@ function PmMemberAnnual() {
                     }
                     </tbody>
                 </table>
-                </div>
             </div>
     </section>
 	);

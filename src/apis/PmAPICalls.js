@@ -18,9 +18,14 @@ import{
     GET_ANNUAL,
     GET_PM_ANNUAL
 } from '../modules/AnnualModule';
+
+import{
+    GET_PM_SEARCHNAME
+} from '../modules/PmMeModule'
 import jwt_Decode from 'jwt-decode';
 
 import { async } from '@dabeng/react-orgchart';
+import { Gesture } from '@mui/icons-material';
 
 export const callEmployeeAPI = ({ currentPage  }) => {
 
@@ -365,6 +370,78 @@ export const callPmAnnualAPI = (empNo) => {
         }
         };
     };
+
+// export const callSearchNameAPI = (empName) => {
+//     console.log('[PmAPICalls] callSearchNameAPI Call');
+
+//     // const requestURL = `${process.env.REACT_APP_BASIC_URL}/api/pm/search`;
+//     const requestURL = `${process.env.REACT_APP_BASIC_URL_FRONT}/api/pm/search?empName=${empName}`;
+
+//     console.log('Das ist empName===========>', empName);
+
+//     return async (dispatch, getState) => {
+
+//         try {
+//             const result = await fetch(requestURL, {
+//                 method: "GET",
+//                 headers: {
+//                     "Authorization": "Bearer " + window.localStorage.getItem("accessToken"),
+//                     "Content-Type": "application/json",
+//                     "Accept": "*/*"
+//                 }
+//             })
+//             .then(response => {
+//                 console.log('-----------------> \n', response);
+//                 return response.json()
+//             });
+    
+//             console.log('[PmAPICalls] callSearchNameAPI RESULT :>>>>>>>>>>>>>>>> ', result);
+
+//             dispatch({type: GET_PM_SEARCHNAME, payload: result});
+//         } catch (error) {
+
+//             console.error('[PmAPICalls] Error in callSearchNameAPI: ', error);
+            
+//         }
+//     }
+// }
+
+
+export const callSearchNameAPI = (empName) => {
+    console.log('[PmAPICalls] callSearchNameAPI Call');
+
+    const requestURL = `${process.env.REACT_APP_BASIC_URL}/api/pm/search?empName=${empName}`;
+
+    console.log('Das ist empName===========>', empName);
+
+    return async (dispatch, getState) => {
+
+        try {
+            const result = await fetch(requestURL, {
+                method: "GET",
+                headers: {
+                    "Authorization": "Bearer " + window.localStorage.getItem("accessToken"),
+                    "Content-Type": "application/json",
+                    "Accept": "*/*"
+                }
+            })
+            .then(response => {
+                console.log('-----------------> \n', response);
+                return response.json()
+            });
+    
+            console.log('[PmAPICalls] callSearchNameAPI RESULT :>>>>>>>>>>>>>>>> ', result);
+
+            dispatch({type: GET_PM_SEARCHNAME, payload: result});
+        } catch (error) {
+
+            console.error('[PmAPICalls] Error in callSearchNameAPI: ', error);
+            
+        }
+    }
+}
+
+
 
 
 

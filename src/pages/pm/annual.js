@@ -3,6 +3,8 @@ import './pm-member.css'
 import PmNav from './pmNav';
 import { useDispatch, useSelector } from 'react-redux';
 import { callAnnualAPI } from '../../apis/PmAPICalls';
+import { callSearchNameAPI } from "../../apis/PmAPICalls";
+import { GET_PM_SEARCHNAME } from "../../modules/PmMeModule";
 
 function PmAnnual() {
 
@@ -10,7 +12,7 @@ function PmAnnual() {
     const itemsPerPage = 10;
 
     const dispatch = useDispatch();
-    let result = useSelector(state => state.pmannual);
+    let result = useSelector((state) => state.pmannual);
 
     const empinfo = useSelector(state => state.authes);
     const name = empinfo.name;
@@ -29,6 +31,41 @@ function PmAnnual() {
 
     console.log('----------',result);
   
+    const [empName, setSearchName] = useState(""); // 검색어를 저장하는 상태 추가
+
+    const updateSearchResults = (data) => {
+      return {
+        type: "GET_PM_SEARCHNAME",
+        payload: data,
+      };
+    };
+  
+    const searchResults = useSelector((state) => state.serchName?.data);
+    console.log(searchResults);
+    const handleSearch = async () => {
+      // 검색어가 비어있으면 아무 작업도 수행하지 않습니다.
+      if (!empName) {
+              
+              dispatch({type: GET_PM_SEARCHNAME, payload: () => {}})
+              return;
+      }
+  
+      try {
+        // 검색 API 호출
+        // const response = await dispatch(callSearchNameAPI({ name: empName }));
+        const response = await dispatch(callSearchNameAPI(empName));
+        console.log("-이건호출결과를위한거---------------------1--", searchResults.data)
+        // API 호출 결과를 처리합니다.
+        if (response.data && response.data.length > 1) {
+
+          console.log("-이건호출결과를위한거----------------222-------", response.data)
+        } else {
+          // 검색 결과가 없을 경우에 대한 처리
+        }
+      } catch (error) {
+        // 에러 처리
+      }
+    };
     // const empinfo = useSelector(state => state.authes);
     // const empNum = empinfo.empNo;
     // const department = empinfo.dept;
@@ -50,11 +87,22 @@ function PmAnnual() {
             <div>
                 <div className="pm-de-top">
                 <div className="pm-div-font">전체 사원 연차 내역
-                    <label className="label-font">이름
+                <input
+                className="pm-department-search"
+                type="text"
+                name="name"
+                placeholder="사원이름을 입력하세요."
+                value={empName}
+                onChange={(e) => setSearchName(e.target.value)}
+              />
+              <button className="pm-department-button" onClick={handleSearch}>
+                검색
+              </button>
+                    {/* <label className="label-font">이름
                     <input className="pm-an-search" type="text" name="name" placeholder="사원이름을 입력하세요."/></label>
                     <label className="label-font2">부서명
                     <input className="pm-an-search2" type="text" name="name" placeholder="사원이름을 입력하세요."/></label>
-                    <button className="pm-department-button">검색</button>
+                    <button className="pm-department-button">검색</button> */}
                 </div>
                 <div className="pm-de">
                     <table className="pm-department-table">
@@ -69,8 +117,10 @@ function PmAnnual() {
                         <th className="columnpm7">연차사용일</th>
                         <th className="columnpm7">비고</th>
                     </tr>
-                    {Array.isArray(result?.data) && result?.data
-                        .map((result) => (
+                    {/* {Array.isArray(result?.data) && result?.data
+                        .map((result) => ( */}
+                        {
+                        (searchResults?.data && searchResults?.data.length > 0 ? searchResults?.data : result?.data)?.map((result) => (
                             <tr key={result?.empNo}>
                                 <td>{result?.anEmployee[0]?.empName}</td>
                                 <td>{result?.anEmployee[0]?.startDate}</td>

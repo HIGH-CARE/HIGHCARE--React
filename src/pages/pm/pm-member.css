@@ -719,8 +719,7 @@ font-size: 16px;
     height: 690px;
     border: #7B7B7B solid 1px;
     text-align: center;
-
-font-size: 16px;
+    font-size: 16px;
 }
 
 .pm-ma-table th{
@@ -926,6 +925,7 @@ font-size: 16px;
     color: #000;
     text-align: center;
     font-size: 40px;
+    font-weight: bold;
     margin-bottom: 60px;
     margin-top: 30px;
 }
@@ -1818,4 +1818,93 @@ font-family: NanumGothic !important;
     width: 100px;
     height: 40px;
     margin: 20px 0px 0px 1300px;
+}
+
+.pmMaBox{
+    width: 250px;
+    height: 100px;
+    border: 3px solid rgb(15, 65, 105);
+    border-radius: 6px;
+    /* line-height: 130px; */
+}
+
+.pmMaBox2{
+    width: 250px;
+    height: 100px;
+    border: 3px solid rgb(15, 65, 105);
+    border-radius: 6px;
+    /* line-height: 130px; */
+    
+}
+/* .pm-line {
+    border-left : 1px solid #10479A;
+    height : 150px;
+    margin-top: 20px;
+} */
+
+
+.pmMaTop{
+    display: flex;
+    width: 1600px;
+    height: 200px;
+    margin-top: 80px;
+    /* border-top: 5px solid rgb(153, 151, 151);
+    border-bottom: 5px solid rgb(153, 151, 151); */
+}
+
+.pmMaplus{
+    display: flex;
+    margin-left: 10px;
+    /* border-right: 5px solid rgb(153, 151, 151);
+    border-left: 5px solid rgb(153, 151, 151); */
+}
+
+.pmMaFont{
+    border-color: #a6bdcc;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.pmLine {
+    border-left : 3px solid #10479A;
+    height : 110px;
+    /* margin-top: 20px; */
+    margin-right: 30px;
+}
+
+.pmMaNumber{
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    margin-left: 120px;
+}
+
+.pmMaWeiter{
+    margin-left: 30px;
+}
+
+
+.pmMaTable{
+    border-collapse: collapse;
+    margin: 30px;
+    width: 1550px;
+    height: 690px;
+    border: #7B7B7B solid 1px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.pmMaTable th{
+    height: 40px;
+    background-color: #EEE;
+    border: #7B7B7B solid 1px;
+}
+
+.pmMaTable td{
+    height: 25px;
+    flex-direction: column;
+    justify-content: center;
+    border: #7B7B7B solid 1px;
 }
